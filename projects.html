@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ilgaz Uygur | Projects</title>
+<meta name="description" content="Digital Fabrication projects by Ilgaz Uygur, Hisar School.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23E2231A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&display=swap">
+<style>
+:root{
+  --bg:#F2F3F0;
+  --panel:#FAFAF8;
+  --ink:#17191C;
+  --muted:#5B6167;
+  --line:rgba(23,25,28,.13);
+  --accent:#E2231A;
+  --font:"Schibsted Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#151719;
+    --panel:#1C1F22;
+    --ink:#E9EBE6;
+    --muted:#A2A8AE;
+    --line:rgba(233,235,230,.13);
+    --accent:#FF4D40;
+  }
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font);
+  font-size:1.0625rem;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{width:100%;max-width:1120px;margin-inline:auto;padding-inline:clamp(20px,5vw,48px)}
+
+/* ---------- Navigation (same as index.html) ---------- */
+.nav{
+  position:sticky;top:0;z-index:10;
+  background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;text-decoration:none}
+.brand-dot{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.links{display:flex;gap:28px;margin:0;padding:0;list-style:none}
+.links a{
+  display:block;
+  padding:6px 0;
+  color:var(--muted);
+  font-weight:500;
+  text-decoration:none;
+  border-bottom:1.5px solid transparent;
+  transition:color .15s,border-color .15s;
+}
+.links a:hover,.links a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
+.menu-btn{
+  display:none;
+  width:42px;height:42px;
+  place-items:center;
+  border:1px solid var(--line);border-radius:8px;
+  background:var(--panel);color:var(--ink);
+  cursor:pointer;
+}
+
+/* ---------- Page header ---------- */
+.page-head{padding:clamp(56px,9vw,104px) 0 clamp(36px,5vw,56px)}
+.page-head h1{
+  margin:0;
+  font-size:clamp(2.75rem,6.5vw,4.75rem);
+  font-weight:800;
+  line-height:1;
+  letter-spacing:-.04em;
+}
+.page-head p{margin:18px 0 0;max-width:52ch;font-size:clamp(1.0625rem,1.5vw,1.1875rem);color:var(--muted)}
+
+/* ---------- Project ---------- */
+.project{padding:clamp(36px,5vw,56px) 0 clamp(64px,9vw,104px);border-top:1px solid var(--line)}
+.project-label{margin:0 0 8px;color:var(--muted);font-size:.9375rem;font-weight:500}
+.project h2{
+  margin:0;
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:800;
+  line-height:1.05;
+  letter-spacing:-.03em;
+}
+.project-sum{margin:16px 0 0;max-width:60ch;font-size:clamp(1.0625rem,1.5vw,1.1875rem);color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0;list-style:none}
+.tags li{padding:6px 14px;border:1px solid var(--line);border-radius:999px;font-size:.9375rem;font-weight:500}
+.tags li.main{background:var(--ink);border-color:var(--ink);color:var(--bg);font-weight:600}
+
+.top-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);
+  gap:20px;
+  align-items:start;
+  margin-top:clamp(32px,5vw,48px);
+}
+.shot{
+  margin:0;
+  padding:24px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+}
+.shot img{width:100%;max-height:560px;object-fit:contain}
+.shot figcaption{margin-top:12px;color:#5B6167;font-size:.875rem;text-align:center}
+
+.panel{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:28px;
+}
+.panel h3{margin:0 0 14px;font-size:1.25rem;font-weight:700;letter-spacing:-.015em}
+.facts{margin:0}
+.facts div{
+  display:grid;
+  grid-template-columns:110px 1fr;
+  gap:16px;
+  padding:13px 0;
+  border-top:1px solid var(--line);
+}
+.facts dt{color:var(--muted);font-size:.9375rem}
+.facts dd{margin:0;font-weight:500}
+
+/* ---------- Documentation ---------- */
+.doc{max-width:720px;margin-top:clamp(48px,7vw,72px)}
+.doc section + section{margin-top:clamp(40px,6vw,56px)}
+.doc h3{margin:0 0 14px;font-size:clamp(1.375rem,2.4vw,1.75rem);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.doc p{margin:0 0 1em;line-height:1.7}
+.doc p:last-child{margin-bottom:0}
+.doc strong{font-weight:600}
+.doc code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.875em;padding:1px 5px;border-radius:4px;background:var(--line)}
+
+.steps{list-style:none;counter-reset:step;margin:0;padding:0}
+.steps li{
+  counter-increment:step;
+  display:grid;
+  grid-template-columns:36px 1fr;
+  gap:16px;
+  padding:18px 0;
+  border-top:1px solid var(--line);
+}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps li::before{
+  content:counter(step);
+  display:grid;place-items:center;
+  width:32px;height:32px;
+  border:1px solid var(--line);border-radius:50%;
+  font-size:.875rem;font-weight:700;
+}
+.steps h4{margin:3px 0 6px;font-size:1.0625rem;font-weight:700}
+.steps p{margin:0}
+.steps p + p{margin-top:8px}
+.steps .settings{color:var(--muted);font-size:.9375rem}
+
+.issue{padding:18px 0;border-top:1px solid var(--line)}
+.issue:last-child{border-bottom:1px solid var(--line)}
+.issue h4{margin:0 0 6px;font-size:1.0625rem;font-weight:700}
+.issue p{margin:0}
+
+.top-grid.single{grid-template-columns:minmax(0,560px)}
+
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:1rem}
+th,td{padding:12px 16px 12px 0;text-align:left;vertical-align:top;border-top:1px solid var(--line)}
+tr:last-child td{border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-size:.875rem;font-weight:500;border-top:0;padding-top:0}
+td:first-child{font-weight:600;white-space:nowrap}
+
+/* ---------- Footer ---------- */
+footer{margin-top:auto;border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9375rem}
+
+/* ---------- Mobile ---------- */
+@media (max-width:860px){
+  .top-grid{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .menu-btn{display:grid}
+  .links{
+    display:none;
+    position:absolute;top:68px;left:0;right:0;
+    flex-direction:column;gap:0;
+    padding:8px clamp(20px,5vw,48px) 16px;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+  }
+  .links.open{display:flex}
+  .links a{padding:12px 0;border-bottom:0}
+  .links a[aria-current="page"]{color:var(--accent)}
+  .facts div{grid-template-columns:1fr;gap:2px}
+  .shot{padding:16px}
+
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-dot" aria-hidden="true"></span>Ilgaz Uygur</a>
+
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="4" y1="7" x2="20" y2="7"/>
+        <line x1="4" y1="12" x2="20" y2="12"/>
+        <line x1="4" y1="17" x2="20" y2="17"/>
+      </svg>
+    </button>
+
+    <ul class="links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" aria-current="page">Projects</a></li>
+      <li><a href="documentation.html">Documentation</a></li>
+      <li><a href="https://github.com/IlgazUygur" target="_blank" rel="noopener">GitHub ↗</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+  <header class="page-head">
+    <h1>Projects</h1>
+    <p>What I design and build in Digital Fabrication, and how I made each one.</p>
+  </header>
+
+  <!-- ===================== Project 1: Website ===================== -->
+  <article class="project" id="website">
+    <p class="project-label">Project 1</p>
+    <h2>Building This Website</h2>
+    <p class="project-sum">A class website on GitHub Pages where I document every Digital Fabrication project, with a home page and a separate projects page.</p>
+    <ul class="tags">
+      <li class="main">GitHub Pages</li>
+      <li>HTML</li>
+      <li>CSS</li>
+    </ul>
+
+    <div class="top-grid single">
+      <section class="panel" aria-labelledby="website-facts">
+        <h3 id="website-facts">Project details</h3>
+        <dl class="facts">
+          <div>
+            <dt>Course</dt>
+            <dd>Digital Fabrication</dd>
+          </div>
+          <div>
+            <dt>Type</dt>
+            <dd>Website</dd>
+          </div>
+          <div>
+            <dt>Pages</dt>
+            <dd>Home, Projects, Documentation</dd>
+          </div>
+          <div>
+            <dt>Built with</dt>
+            <dd>HTML, CSS, JavaScript</dd>
+          </div>
+          <div>
+            <dt>Hosting</dt>
+            <dd>GitHub Pages</dd>
+          </div>
+        </dl>
+      </section>
+    </div>
+
+    <div class="doc">
+      <section>
+        <h3>What was the goal?</h3>
+        <p>I needed a place to document my Digital Fabrication projects so that my teacher and classmates can see how each one was made. The goal was a clean, simple website hosted on GitHub Pages, with a home page and a separate projects page, that works on both a computer and a phone.</p>
+        <p>I also wanted it to follow the same structure as the website I made for my Advanced AI Concepts class, so that both class sites feel consistent.</p>
+      </section>
+
+      <section>
+        <h3>What did I do?</h3>
+        <ol class="steps">
+          <li>
+            <div>
+              <h4>Planned the structure</h4>
+              <p>I decided on three pages linked from a menu at the top: Home (<code>index.html</code>), Projects (<code>projects.html</code>) and Documentation (<code>documentation.html</code>), plus a link to my GitHub profile.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Created the repository</h4>
+              <p>On GitHub, I created a new public repository for the class. All the pages and images of the site are stored in it.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Wrote the code with an AI assistant</h4>
+              <p>I described each page to Claude, an AI assistant, which wrote the HTML, the CSS and a short JavaScript for the mobile menu. I opened every version in the browser and asked for changes until the design was what I wanted.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Built the home page</h4>
+              <p><code>index.html</code> has the menu, a short introduction that starts with "Hello, I'm Ilgaz.", a Quick facts panel with my course, languages, interests, goal and school email, and an On this site panel that links to the other pages.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Built the projects page</h4>
+              <p><code>projects.html</code> uses the same menu and styles as the home page. Each project is its own section with a details panel and documentation that answers the same six questions.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Added images</h4>
+              <p>I uploaded project screenshots to the repository, such as <code>image.png</code> for the rocket, and linked them with relative paths like <code>src="image.png"</code>, so they load from the same folder as the page.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Published with GitHub Pages</h4>
+              <p>In the repository, I opened Settings, then Pages, chose Deploy from a branch, selected the main branch and the / (root) folder, and saved. After about a minute, the site was live at a github.io address.</p>
+              <p class="settings">GitHub Pages settings: Source = Deploy from a branch, Branch = main, Folder = / (root).</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Tested on computer and phone</h4>
+              <p>I opened the site on my laptop and on my phone, clicked every menu link, and checked that the menu turns into a button on small screens.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>What tools and materials did I use?</h3>
+        <p>The project is fully digital, so no physical materials were used.</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th scope="col">Tool</th><th scope="col">What I used it for</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>GitHub</td><td>Storing the site files and images in a repository</td></tr>
+              <tr><td>GitHub Pages</td><td>Hosting the site for free at a github.io address</td></tr>
+              <tr><td>HTML and CSS</td><td>The structure and design of each page</td></tr>
+              <tr><td>JavaScript</td><td>Opening and closing the menu on phones</td></tr>
+              <tr><td>Claude (AI assistant)</td><td>Writing and revising the code from my descriptions</td></tr>
+              <tr><td>Google Fonts</td><td>The Schibsted Grotesk typeface</td></tr>
+              <tr><td>Laptop and phone browsers</td><td>Testing the layout on different screen sizes</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h3>What went wrong?</h3>
+        <div class="issue">
+          <h4>1. The first design was too complicated</h4>
+          <p>The first version had an animated laser cutting around the top of the page, a wood texture, project filters and example projects I hadn't made. It looked impressive, but it distracted from the actual content and didn't feel like my own site.</p>
+        </div>
+        <div class="issue">
+          <h4>2. Everything was on one page</h4>
+          <p>The home page tried to hold the projects, the tools and the about section at the same time, so it was long and hard to scan.</p>
+        </div>
+        <div class="issue">
+          <h4>3. Some details were wrong or unnecessary</h4>
+          <p>It said I was in 11th grade, though I'm in 12th, and it had a link to my personal portfolio and a large photo area that this class site doesn't need.</p>
+        </div>
+        <div class="issue">
+          <h4>4. It didn't match my other class website</h4>
+          <p>My Advanced AI Concepts site has a clear structure: a menu, an introduction, quick facts and links to each page. This site used a different structure, so the two looked unrelated.</p>
+        </div>
+        <div class="issue">
+          <h4>5. My first project documentation was too short</h4>
+          <p>The rocket documentation listed the steps but not what went wrong or how I fixed it, so nobody could learn from my mistakes or rebuild the model from it.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>What did I change, and how did I solve the problem?</h3>
+        <div class="issue">
+          <h4>1. Simplified the design</h4>
+          <p>I removed the animation, the texture, the filters and the example projects, and switched to a plain layout: one typeface, a light background and simple panels.</p>
+        </div>
+        <div class="issue">
+          <h4>2. Split the site into pages</h4>
+          <p>The home page is now only an introduction, and the projects have their own page, linked from the menu.</p>
+        </div>
+        <div class="issue">
+          <h4>3. Fixed the details</h4>
+          <p>I corrected my grade to 12th, and removed the portfolio link and the photo area.</p>
+        </div>
+        <div class="issue">
+          <h4>4. Used the same structure as my AI site</h4>
+          <p>I rebuilt the home page with the same layout as my Advanced AI Concepts site: menu, introduction, Quick facts and an On this site panel. On phones, the menu collapses into a button the same way.</p>
+        </div>
+        <div class="issue">
+          <h4>5. Rewrote the documentation around six questions</h4>
+          <p>Every project now answers the same six questions: the goal, what I did, the tools, what went wrong, what I changed and the result. For the rocket, I added exact dimensions and Onshape settings so the model can be rebuilt from scratch.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>What was the result?</h3>
+        <p>The finished site has a home page and a projects page that share the same menu and design, and it follows the same structure as my AI class site. It works on computers and phones, and it switches to dark colors when the device is in dark mode.</p>
+        <p>Every project is documented in the same six-question format, so adding a new project only means copying one project section and filling in the answers.</p>
+      </section>
+    </div>
+  </article>
+
+  <!-- ===================== Project 2: Rocket ===================== -->
+  <article class="project" id="rocket">
+    <p class="project-label">Project 2</p>
+    <h2>Multi-Stage Rocket Model</h2>
+    <p class="project-sum">A 255 mm tall rocket with a core stage, an upper stage, four side boosters and an engine nozzle, modeled in Onshape from basic sketches, extrudes and revolves.</p>
+    <ul class="tags">
+      <li class="main">Onshape</li>
+      <li>3D CAD</li>
+    </ul>
+
+    <div class="top-grid">
+      <figure class="shot">
+        <img src="image.png" alt="Rocket model in Onshape with an orange nose cone, grey body, four side boosters and an orange engine nozzle, shown with the Front, Top and Right planes">
+        <figcaption>The finished model in Onshape, with the Front, Top and Right planes.</figcaption>
+      </figure>
+
+      <section class="panel" aria-labelledby="rocket-facts">
+        <h3 id="rocket-facts">Project details</h3>
+        <dl class="facts">
+          <div>
+            <dt>Course</dt>
+            <dd>Digital Fabrication</dd>
+          </div>
+          <div>
+            <dt>Software</dt>
+            <dd>Onshape</dd>
+          </div>
+          <div>
+            <dt>Units</dt>
+            <dd>Millimeters</dd>
+          </div>
+          <div>
+            <dt>Total height</dt>
+            <dd>255 mm</dd>
+          </div>
+          <div>
+            <dt>Parts</dt>
+            <dd>13</dd>
+          </div>
+          <div>
+            <dt>Features</dt>
+            <dd>Sketch, Extrude, Revolve, Circular pattern, Appearance</dd>
+          </div>
+        </dl>
+      </section>
+    </div>
+
+    <div class="doc">
+      <section>
+        <h3>What was the goal?</h3>
+        <p>This was my first CAD project in Digital Fabrication. The goal was to learn the basic Onshape workflow by modeling a multi-stage rocket: drawing 2D sketches on the right planes, turning them into 3D parts, and copying repeated parts with a pattern instead of drawing them again.</p>
+        <p>I also wanted the model to be exactly symmetric, so every part had to be built from dimensions around one center axis rather than placed by eye.</p>
+      </section>
+
+      <section>
+        <h3>What did I do?</h3>
+        <p>The table lists every part with the sizes used in the steps below. The origin is at the bottom of the core stage, and heights are measured upward from it.</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th scope="col">Part</th><th scope="col">Shape</th><th scope="col">Size</th><th scope="col">Height range</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Core stage</td><td>Cylinder</td><td>Ø40 mm, 100 mm tall</td><td>0 to 100 mm</td></tr>
+              <tr><td>Transition</td><td>Cone section</td><td>Ø40 mm to Ø25 mm, 20 mm tall</td><td>100 to 120 mm</td></tr>
+              <tr><td>Upper stage</td><td>Cylinder</td><td>Ø25 mm, 70 mm tall</td><td>120 to 190 mm</td></tr>
+              <tr><td>Nose cone</td><td>Cone</td><td>Ø25 mm base, 40 mm tall</td><td>190 to 230 mm</td></tr>
+              <tr><td>Booster body (×4)</td><td>Cylinder</td><td>Ø15 mm, 90 mm tall</td><td>0 to 90 mm</td></tr>
+              <tr><td>Booster cone (×4)</td><td>Cone</td><td>Ø15 mm base, 25 mm tall</td><td>90 to 115 mm</td></tr>
+              <tr><td>Engine nozzle</td><td>Cone section</td><td>Ø30 mm to Ø36 mm, 25 mm tall</td><td>0 to −25 mm</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ol class="steps" style="margin-top:28px">
+          <li>
+            <div>
+              <h4>Set up the document</h4>
+              <p>I created a new Onshape document and set the units to millimeters from the Document menu, under Workspace units.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Core stage</h4>
+              <p>I selected the Top plane, started a sketch and drew a center point circle on the origin, dimensioned to Ø40 mm. Then I extruded it upward.</p>
+              <p class="settings">Extrude settings: Solid, New, Blind, 100 mm.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Transition</h4>
+              <p>On the Front plane, I drew a vertical construction line from the origin to use as the rocket's center axis. Next to it I drew the half-profile of the transition as a closed shape: 20 mm wide at a height of 100 mm, narrowing to 12.5 mm wide at 120 mm, with its inner edge on the axis. I revolved it around the construction line.</p>
+              <p class="settings">Revolve settings: Solid, New, Full, axis = center construction line.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Upper stage</h4>
+              <p>I clicked the top face of the transition, started a sketch on it and drew a Ø25 mm circle on the center, then extruded it upward.</p>
+              <p class="settings">Extrude settings: Solid, New, Blind, 70 mm.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Nose cone</h4>
+              <p>On the Front plane, I drew a right triangle with its vertical edge on the center axis, from 190 mm up to 230 mm, and a 12.5 mm bottom edge. I revolved it around the axis the same way as the transition.</p>
+              <p class="settings">Revolve settings: Solid, New, Full, axis = center construction line.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>First booster body</h4>
+              <p>On the Top plane, I drew a Ø15 mm circle with its center on the X axis, dimensioned 27.5 mm from the origin. That distance is the core radius (20 mm) plus the booster radius (7.5 mm), so the booster touches the core exactly. Then I extruded it.</p>
+              <p class="settings">Extrude settings: Solid, New, Blind, 90 mm.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Booster nose cone</h4>
+              <p>On the Front plane, I drew a vertical construction line 27.5 mm from the origin, through the center of the booster. I drew a right triangle on that line with a 7.5 mm bottom edge at 90 mm and its tip at 115 mm, and revolved it around the booster's line.</p>
+              <p class="settings">Revolve settings: Solid, New, Full, axis = booster construction line.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Circular pattern</h4>
+              <p>To make the other three boosters, I used Circular pattern with both the booster body and the booster cone selected. For the axis, I clicked the cylindrical face of the core, which Onshape uses as the center axis.</p>
+              <p class="settings">Circular pattern settings: Part pattern, 2 parts selected, axis = core face, 4 instances, Equal spacing, 360°.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Engine nozzle</h4>
+              <p>On the Front plane, I drew the nozzle's half-profile on the center axis: 15 mm wide at 0 mm, widening to 18 mm at −25 mm, below the core. I revolved it around the center axis.</p>
+              <p class="settings">Revolve settings: Solid, New, Full, axis = center construction line.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Appearance</h4>
+              <p>In the Parts list, I right-clicked each part and used Edit appearance. I made the nose cones, the transition and the nozzle orange, and the core, upper stage and booster bodies grey, so each section is easy to tell apart.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>What tools and materials did I use?</h3>
+        <p><strong>Onshape</strong>, a browser-based CAD program, with a free education account. The project is fully digital, so no physical materials were used. All dimensions are in millimeters.</p>
+      </section>
+
+      <section>
+        <h3>What went wrong?</h3>
+        <div class="issue">
+          <h4>1. The first revolve failed</h4>
+          <p>For the transition, I first drew the profile as a closed shape floating next to the center, without any line to rotate around. Onshape showed the Revolve feature in red because there was no axis to select.</p>
+        </div>
+        <div class="issue">
+          <h4>2. The booster didn't line up with the core</h4>
+          <p>I placed the first booster circle by eye. Viewed from above, it cut slightly into the core, and the circular pattern would have copied that mistake to all four boosters.</p>
+        </div>
+        <div class="issue">
+          <h4>3. The pattern copied boosters without nose cones</h4>
+          <p>In my first circular pattern, I only selected the booster body. The result was three new boosters with flat tops, because the cone was a separate part that wasn't in the selection.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>What did I change, and how did I solve the problem?</h3>
+        <div class="issue">
+          <h4>1. Added a construction line as the axis</h4>
+          <p>I drew a vertical construction line from the origin and moved the profile so its inner edge sat on that line. After selecting the line as the axis, the revolve worked. I used the same method for every cone after that.</p>
+        </div>
+        <div class="issue">
+          <h4>2. Placed the booster with a dimension</h4>
+          <p>I locked the circle's center to the X axis and dimensioned its distance from the origin as 27.5 mm, the core radius plus the booster radius. Now the booster touches the core exactly, and if I change either diameter later, this is the only other number I need to update.</p>
+        </div>
+        <div class="issue">
+          <h4>3. Added the cone to the pattern</h4>
+          <p>I edited the pattern and added the booster cone to the selection, so both parts were copied together. I also learned to finish a part completely before patterning it.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>What was the result?</h3>
+        <p>The final model is a 255 mm tall rocket made of 13 parts: the core stage, transition, upper stage, nose cone, engine nozzle, and four boosters with their cones. All four boosters are evenly spaced and touch the core exactly, and the colors make each section easy to identify.</p>
+        <p>Because every part is built from dimensions around the center axis, the model is easy to change. For example, making the core wider only needs the core diameter and the booster distance to be updated, and the pattern places the boosters again automatically.</p>
+      </section>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Ilgaz Uygur</div>
+</footer>
+
+<script>
+  const menuBtn = document.querySelector(".menu-btn");
+  const navLinks = document.getElementById("nav-links");
+  menuBtn.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", isOpen);
+  });
+</script>
+</body>
+</html>
