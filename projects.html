@@ -610,6 +610,194 @@ footer{margin-top:auto;border-top:1px solid var(--line);padding:28px 0;color:var
       </section>
     </div>
   </article>
+
+  <!-- ===================== Project 3: Rocket Design ===================== -->
+  <article class="project" id="rocket-design">
+    <p class="project-label">Project 3</p>
+    <h2>Rocket Design in Parts</h2>
+    <p class="project-sum">A rocket designed in Onshape as 23 separate parts that slide onto a central rod, including body sections, a fin ring with four fins, a nose cone, a motor mount, an engine nozzle, connector pins and end caps.</p>
+    <ul class="tags">
+      <li class="main">Onshape</li>
+      <li>3D CAD</li>
+      <li>Part design</li>
+    </ul>
+
+    <div class="top-grid">
+      <figure class="shot">
+        <img src="Screenshot%202026-10-12%20174916.png" alt="All rocket parts laid out on one plane in Onshape: four purple fins, a purple fin ring, grey, light blue and blue body sections, an orange nozzle, a dark grey nose cone, a grey motor mount, small connector pins and colored end caps">
+        <figcaption>Every part of the rocket laid out on one plane in Onshape.</figcaption>
+      </figure>
+
+      <section class="panel" aria-labelledby="design-facts">
+        <h3 id="design-facts">Project details</h3>
+        <dl class="facts">
+          <div>
+            <dt>Course</dt>
+            <dd>Digital Fabrication</dd>
+          </div>
+          <div>
+            <dt>Software</dt>
+            <dd>Onshape</dd>
+          </div>
+          <div>
+            <dt>Units</dt>
+            <dd>Millimeters</dd>
+          </div>
+          <div>
+            <dt>Parts</dt>
+            <dd>23</dd>
+          </div>
+          <div>
+            <dt>Features</dt>
+            <dd>Sketch, Extrude, Revolve, Transform, Appearance</dd>
+          </div>
+        </dl>
+      </section>
+    </div>
+
+    <div class="doc">
+      <section>
+        <h3>What was the goal?</h3>
+        <p>This was my second CAD project in Digital Fabrication. In my first rocket, all the parts were stacked into one finished model. This time the goal was to design the rocket as separate parts that actually fit together, so that each part can be checked, changed and made on its own.</p>
+        <p>I also wanted every part to be visible at once, so I laid all of them out side by side on one plane instead of stacking them.</p>
+      </section>
+
+      <section>
+        <h3>What did I do?</h3>
+        <p>The table lists every part, from the top of the rocket to the bottom. Every section has a hole in its center, so all of them slide onto the same rod and stay lined up.</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th scope="col">Part</th><th scope="col">Shape</th><th scope="col">Color</th><th scope="col">Size</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Nose cone</td><td>Dome</td><td>Dark grey</td><td>Ø30 mm base, 20 mm tall, Ø10 mm socket underneath</td></tr>
+              <tr><td>Upper body section</td><td>Tapered section with a side slot</td><td>Light blue</td><td>Ø50 mm to Ø30 mm, 40 mm tall, Ø10 mm hole</td></tr>
+              <tr><td>Main body section</td><td>Cylinder</td><td>Grey</td><td>Ø56 mm, 60 mm tall, Ø10 mm hole</td></tr>
+              <tr><td>Coupler ring</td><td>Ring</td><td>Blue</td><td>Ø50 mm, 10 mm tall, Ø14 mm hole</td></tr>
+              <tr><td>Fin ring</td><td>Ring with 4 slots</td><td>Purple</td><td>Ø50 mm, 15 mm tall, Ø14 mm hole</td></tr>
+              <tr><td>Fins (×4)</td><td>Flat trapezoid</td><td>Purple</td><td>40 mm root, 20 mm tip, 25 mm span, 3 mm thick</td></tr>
+              <tr><td>Motor mount</td><td>Ring</td><td>Grey</td><td>Ø30 mm, 10 mm tall, Ø10 mm hole</td></tr>
+              <tr><td>Engine nozzle</td><td>Ring</td><td>Orange</td><td>Ø24 mm, 12 mm tall, Ø10 mm hole</td></tr>
+              <tr><td>Connector pins (×8)</td><td>Cylinder</td><td>Grey</td><td>Ø9.6 mm, 15 mm long</td></tr>
+              <tr><td>End caps (×4)</td><td>Disc</td><td>Purple, blue, yellow, light blue</td><td>Ø20 mm, 3 mm thick</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ol class="steps" style="margin-top:28px">
+          <li>
+            <div>
+              <h4>Planned the parts</h4>
+              <p>Before opening Onshape, I split the rocket into sections from the nose to the nozzle and decided how they connect: every section has a center hole, and pins join the sections to each other.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Set up the document</h4>
+              <p>I created a new Onshape document and set the units to millimeters from the Document menu, under Workspace units.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Main body section</h4>
+              <p>On the Top plane, I drew a Ø56 mm circle on the origin and a Ø10 mm circle inside it for the hole. I selected only the area between the two circles and extruded it, so the hole goes all the way through.</p>
+              <p class="settings">Extrude settings: Solid, New, Blind, 60 mm.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Upper body section</h4>
+              <p>On the Front plane, I drew a vertical construction line as the axis. I drew the half-profile 5 mm away from the line, so the revolve leaves a Ø10 mm hole in the center: 20 mm wide at the bottom, narrowing to 10 mm wide at the top, 40 mm tall. After revolving it, I sketched a 6 mm × 15 mm rectangle on its side and used Extrude with Remove to cut the slot.</p>
+              <p class="settings">Revolve settings: Solid, New, Full, axis = construction line. Slot: Extrude, Remove, Through all.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Coupler ring, motor mount and nozzle</h4>
+              <p>I made these the same way as the main body: an outer circle and a hole circle on the Top plane, extruded together. Only the diameters and heights change, as listed in the table.</p>
+              <p class="settings">Extrude settings: Solid, New, Blind, 10 mm (coupler ring and motor mount), 12 mm (nozzle).</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Fin ring and fins</h4>
+              <p>I made the fin ring as a Ø50 mm ring with a Ø14 mm hole, extruded 15 mm. Then I cut four 3 mm wide slots into its side, 90° apart. For the fins, I sketched a trapezoid on the Front plane with a 40 mm root, a 20 mm tip and a 25 mm span, extruded it 3 mm thick, and made four copies.</p>
+              <p class="settings">Fin extrude settings: Solid, New, Symmetric, 3 mm.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Nose cone</h4>
+              <p>On the Front plane, I drew a quarter-circle half-profile next to the construction line, 15 mm wide and 20 mm tall, and revolved it, the same method I learned in my first rocket. Then I cut a Ø10 mm socket, 8 mm deep, into its base so it sits on a pin.</p>
+              <p class="settings">Revolve settings: Solid, New, Full, axis = construction line. Socket: Extrude, Remove, Blind, 8 mm.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Pins and end caps</h4>
+              <p>I made the connector pins by extruding a Ø9.6 mm circle 15 mm, and the end caps by extruding a Ø20 mm circle 3 mm.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Laid out the parts</h4>
+              <p>I used Transform with Translate to move every part to its own spot on the same plane, with space between them, so none overlap and each one can be seen clearly.</p>
+              <p class="settings">Transform settings: Translate by XYZ.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Appearance</h4>
+              <p>In the Parts list, I right-clicked each part and used Edit appearance to give each section its own color, so it is easy to tell which part belongs where.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>What tools and materials did I use?</h3>
+        <p><strong>Onshape</strong>, a browser-based CAD program, with a free education account. The project is fully digital, so no physical materials were used. All dimensions are in millimeters.</p>
+      </section>
+
+      <section>
+        <h3>What went wrong?</h3>
+        <div class="issue">
+          <h4>1. The pins were the same size as the holes</h4>
+          <p>I first drew the connector pins at Ø10 mm, exactly the same as the holes. On screen they looked like a perfect fit, but with zero space between them, real parts would be too tight to slide together.</p>
+        </div>
+        <div class="issue">
+          <h4>2. The fins didn't fit the fin ring</h4>
+          <p>I placed the slots in the fin ring by eye. When I checked from the top view, the slots were not exactly 90° apart, and one fin cut into the ring instead of sitting in its slot.</p>
+        </div>
+        <div class="issue">
+          <h4>3. All the parts were stacked on top of each other</h4>
+          <p>Because I drew every part on the origin, they were all created in the same place and overlapped. It was hard to select a single part, and the screenshot showed one messy shape.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>What did I change, and how did I solve the problem?</h3>
+        <div class="issue">
+          <h4>1. Made the pins slightly smaller</h4>
+          <p>I changed the pin diameter to Ø9.6 mm, which leaves 0.2 mm of space on each side. The holes stayed at Ø10 mm, so the pins can now slide in without being loose.</p>
+        </div>
+        <div class="issue">
+          <h4>2. Placed the slots with dimensions</h4>
+          <p>I redrew the first slot with dimensions from the center and used the same 3 mm value for both the slot width and the fin thickness. Then I copied the slot around the ring at exactly 90°, so all four fins line up.</p>
+        </div>
+        <div class="issue">
+          <h4>3. Moved each part with Transform</h4>
+          <p>I used Transform with Translate to move every part to its own place on the plane. I kept them all on the origin while drawing, so each one was still built around the same center, and only moved them at the end.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>What was the result?</h3>
+        <p>The final design is a rocket made of 23 separate parts: the nose cone, two body sections, a coupler ring, a fin ring with four fins, a motor mount, an engine nozzle, eight connector pins and four end caps. Every part is laid out on one plane and has its own color, so the whole rocket can be checked at a glance.</p>
+        <p>Because every section shares the same center hole and the pins have the right clearance, the parts are designed to fit together for real, not just on screen. This is the biggest difference from my first rocket, where everything was built as one stacked model.</p>
+      </section>
+    </div>
+  </article>
 </main>
 
 <footer>
